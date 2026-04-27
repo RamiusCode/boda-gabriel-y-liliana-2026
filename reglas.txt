@@ -1,0 +1,92 @@
+ ESTOS INVITADOS QUIER QEU MUETRE CON SUS PASES
+"
+German Leon y Flia – 3 pases
+Eduardo Leon y Sra – 2 pases
+Rosita Soto e hija – 2 pases
+Jason Montenegro – 1 pase
+Mario Osco y Sra – 2 pases
+Jaime Vaca y Sra – 2 pases
+Alex Roger Baldomar – 1 pase
+Miriam Guillem – 1 pase
+Calicto Vargas – 1 pase
+Juan Solares y Sra – 2 pases
+Laura Lindahl – 1 pase
+Estefany Mendoza – 1 pase
+Ronald Corcuy y Sra – 2 pases
+
+Hector Mario Concha Ortega – 1 pase
+Milena Choque Acosta – 1 pase
+Jose Andres Concha – 1 pase
+Ruben Flores, Sra e hijo – 3 pases (2)
+Joissy Ticona Ovando – 1 pase
+Maria Nelly Orellana Claure – 1 pase
+Mery Cruz Choque Acosta – 1 pase
+Carmen Rosa Acosta – 1 pase
+Alfredo Chavez y Sra – 2 pases
+Rafael Armando Concha y Sra – 3 pases
+Marco Antonio Concha y Sra – 2 pases
+Paola Choque – 1 pase
+Cecilia Choque – 1 pase
+Melissa Concha Rojas – 1 pase
+"
+(nombrsflorse.astro
+dedicatoria.astro
+Bendicion.astro
+nombrespadres.astro
+fecha.astro
+contador.astro
+direccionceremonia.astro
+Direccionrecepcion.astro
+itinerario.astro
+sugerenciaregalo.astro
+codigovestimenta.astro
+restriccion.asrto
+galeria.astro
+cofirmar.astro
+despedidadedicatoria.astro
+des.astro)
+
+
+
+******************************************************
+ESTOS INVITADOS QUIER QEU MUETRE CON SUS PASES
+"
+Elvira Ortiz Ortega – 1 pase
+Nilo Flores y Sra – 2 pases
+Luis Aguilar y Sra – 2 pases
+Saul Choque Acosta – 1 pase
+Daniel Rodriguez y Sra – 2 pases
+Noel Flores y Sra – 2 pases
+Ervin Flores y Sra – 2 pases
+Jorge Siles y Sra – 2 pases
+Nitzha Corcuy – 1 pase
+
+Ervin Vargas y Sra – 2 pases
+Luis Carlos Leon y Sra – 2 pases
+Oscar Sanjines y Sra – 2 pases
+Humberto Cabrera y Sra – 2 pases
+Jhon Erick Saravia y Sra – 2 pases
+Alex Roger Baldomar – 1 pase
+Miguel Angel Vaca y Sra – 2 pases
+Enrique Anglaril y Sra – 2 pases
+Rafael Lopez y Sra – 2 pases
+Juan Valencia y Sra – 2 pases
+Carlos Ortiz – 1 pase
+Lucy Mery Ortega – 1 pase
+"
+
+(nombrsflorse.astro
+dedicatoria.astro
+Bendicion.astro
+nombrespadres.astro
+fecha2.astro
+contador2.astro
+Direccionrecepcion.astro
+itinerario2.astro
+sugerenciaregalo.astro
+codigovestimenta.astro
+restriccion.asrto
+galeria.astro
+cofirmar.astro
+despedidadedicatoria.astro
+des.astro)

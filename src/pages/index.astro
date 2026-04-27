@@ -4,52 +4,90 @@ import Layout from "../layouts/Layout.astro";
 import Portada from "../components/Portada.astro";
 import NombresFlores from "../components/NombresFlores.astro";
 import Dedicatoria from "../components/Dedicatoria.astro";
-
 import Bendicion from "../components/Bendicion.astro";
 import NombrePadres from "../components/NombresPadres.astro";
 import Fecha from "../components/Fecha.astro";
+import Fecha2 from "../components/Fecha2.astro";
 import Contador from "../components/Contador.astro";
-
+import Contador2 from "../components/Contador2.astro";
 import DireccionCeremonia from "../components/DireccionCeremonia.astro";
 import DireccionRecepcion from "../components/DireccionRecepcion.astro";
 import Itinerario from "../components/Itinerario.astro";
-
+import Itinerario2 from "../components/Itinerario2.astro";
 import SugerenciaRegalo from "../components/SugerenciaRegalo.astro";
 import CodigoVestimenta from "../components/CodigoVestimenta.astro";
 import Restriccion from "../components/Restriccion.astro";
+import Galeria from "../components/Galeria.astro";
 import Confirmar from "../components/Confirmar.astro";
 import DespedidaDedicatoria from "../components/DespedidaDedicatoria.astro";
 import Des from "../components/Des.astro";
-import Galeria from "../components/Galeria.astro";
 ---
 
-<Layout title="Boda">
-    <!-- PORTADA (se muestra primero, bloquea scroll) -->
-    <Portada />
+<Layout title="Boda Gabriel & Liliana">
 
-    <!-- CONTENIDO PRINCIPAL (oculto hasta que se presione el sobre) -->
-    <div id="contenido-principal">
-        <NombresFlores />
-        <Dedicatoria />
+  <Portada />
 
-        <Bendicion />
-        <NombrePadres />
-        <Fecha />
-        <Contador />
+  <div id="contenido-principal">
 
-        <DireccionCeremonia />
-        <DireccionRecepcion />
-        <Itinerario />
+    <!-- Siempre visibles -->
+    <NombresFlores />
+    <Dedicatoria />
+    <Bendicion />
+    <NombrePadres />
 
-        <SugerenciaRegalo />
-
-        <CodigoVestimenta />
-        <Restriccion />
-        <Galeria />
-        <Confirmar />
-
-        <DespedidaDedicatoria />
-
-        <Des />
+    <!-- GRUPO COMPLETA: fecha, contador y ceremonia -->
+    <div id="bloque-completa">
+      <Fecha />
+      <Contador />
+      <DireccionCeremonia />
     </div>
+
+    <!-- GRUPO REDUCIDA: fecha2 y contador2 (sin ceremonia) -->
+    <div id="bloque-reducida" style="display:none">
+      <Fecha2 />
+      <Contador2 />
+    </div>
+
+    <!-- Siempre visible -->
+    <DireccionRecepcion />
+
+    <!-- Itinerario completo (con civil + religiosa) -->
+    <div id="bloque-itinerario-completa">
+      <Itinerario />
+    </div>
+
+    <!-- Itinerario reducido (sin civil + religiosa) -->
+    <div id="bloque-itinerario-reducida" style="display:none">
+      <Itinerario2 />
+    </div>
+
+    <!-- Siempre visibles -->
+    <SugerenciaRegalo />
+    <CodigoVestimenta />
+    <Restriccion />
+    <Galeria />
+    <Confirmar />
+    <DespedidaDedicatoria />
+    <Des />
+
+  </div>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get("tipo") || "cp";
+
+    if (tipo === "rd") {
+      const bloqueCompleta    = document.getElementById("bloque-completa");
+      const bloqueReducida    = document.getElementById("bloque-reducida");
+      const itinerarioCompleta = document.getElementById("bloque-itinerario-completa");
+      const itinerarioReducida = document.getElementById("bloque-itinerario-reducida");
+
+      if (bloqueCompleta)     bloqueCompleta.style.display    = "none";
+      if (bloqueReducida)     bloqueReducida.style.display    = "block";
+      if (itinerarioCompleta) itinerarioCompleta.style.display = "none";
+      if (itinerarioReducida) itinerarioReducida.style.display = "block";
+    }
+  });
+</script>

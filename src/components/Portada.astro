@@ -1,7 +1,5 @@
 ---
 // src/components/Portada.astro - Portada elegante con hojas animadas y fondo texturizado
-const invitado = "María González de Rodríguez";
-const pase = "2 Personas";
 ---
 
 <!-- CAPA BLANCA DE TRANSICIÓN — tapa el fondo del layout durante el fade -->
@@ -123,28 +121,28 @@ const pase = "2 Personas";
                     <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-[#C9A96E]"></div>
 
                     <!-- Etiqueta superior -->
-                    <p class="text-[#C9A96E] text-[9px] tracking-[0.35em] uppercase text-center mb-1.5 font-serif">
+                    <p class="text-[#C9A96E] text-sm tracking-[0.3em] uppercase text-center mb-1.5 font-serif">
                         — Para —
                     </p>
 
                     <!-- Nombre del invitado -->
-                    <p class="font-charm text-[#0a285e] text-lg text-center leading-tight mb-1.5">
-                        {invitado}
+                    <p id="portada-nombre-invitado" class="font-charm text-[#0a285e] text-xl text-center leading-tight mb-1.5">
+                        Invitado Especial
                     </p>
 
                     <!-- Separador -->
                     <div class="flex items-center justify-center gap-2 mb-1.5">
                         <div class="flex-1 h-px bg-[#C9A96E]/30"></div>
-                        <span class="text-[#C9A96E] text-[9px]">✦</span>
+                        <span class="text-[#C9A96E] text-sm">✦</span>
                         <div class="flex-1 h-px bg-[#C9A96E]/30"></div>
                     </div>
 
                     <!-- Pase -->
-                    <p class="text-[#0a285e]/60 text-[9px] tracking-[0.25em] uppercase text-center mb-1 font-serif">
+                    <p class="text-[#0a285e]/70 text-sm tracking-[0.2em] uppercase text-center mb-1 font-serif">
                         Pase válido para
                     </p>
-                    <p class="font-charm text-[#0a285e] text-lg text-center leading-tight">
-                        {pase}
+                    <p id="portada-pase-invitado" class="font-charm text-[#0a285e] text-2xl text-center leading-tight font-semibold">
+                        —
                     </p>
                 </div>
             </div>
@@ -199,6 +197,16 @@ const pase = "2 Personas";
 
     if (typeof window !== "undefined") {
         document.addEventListener("DOMContentLoaded", () => {
+            // ── Leer parámetros de la URL ──────────────────────────
+            const params = new URLSearchParams(window.location.search);
+            const nombreInvitado = params.get("invitado");
+            const paseInvitado   = params.get("pase");
+
+            const elNombre = document.getElementById("portada-nombre-invitado");
+            const elPase   = document.getElementById("portada-pase-invitado");
+            if (elNombre && nombreInvitado) elNombre.textContent = nombreInvitado;
+            if (elPase   && paseInvitado)   elPase.textContent   = paseInvitado;
+
             console.log("✨ Iniciando animaciones elegantes de portada...");
 
             document.body.classList.add("portada-activa");

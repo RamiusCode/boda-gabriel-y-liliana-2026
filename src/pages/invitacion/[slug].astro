@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Portada from "../../components/Portada.astro";
+import NombresFlores from "../../components/NombresFlores.astro";
+import Dedicatoria from "../../components/Dedicatoria.astro";
+import Bendicion from "../../components/Bendicion.astro";
+import NombresPadres from "../../components/NombresPadres.astro";
+import Fecha from "../../components/Fecha.astro";
+import Fecha2 from "../../components/Fecha2.astro";
+import Contador from "../../components/Contador.astro";
+import Contador2 from "../../components/Contador2.astro";
+import DireccionCeremonia from "../../components/DireccionCeremonia.astro";
+import DireccionRecepcion from "../../components/DireccionRecepcion.astro";
+import Itinerario from "../../components/Itinerario.astro";
+import Itinerario2 from "../../components/Itinerario2.astro";
+import SugerenciaRegalo from "../../components/SugerenciaRegalo.astro";
+import CodigoVestimenta from "../../components/CodigoVestimenta.astro";
+import Restriccion from "../../components/Restriccion.astro";
+import Galeria from "../../components/Galeria.astro";
+import Confirmar from "../../components/Confirmar.astro";
+import DespedidaDedicatoria from "../../components/DespedidaDedicatoria.astro";
+import Des from "../../components/Des.astro";
+import invitados from "../../data/invitados.json";
+
+export function getStaticPaths() {
+  return invitados.map((inv) => ({
+    params: { slug: inv.slug },
+    props: { invitado: inv },
+  }));
+}
+
+const { invitado } = Astro.props;
+const esCompleta = invitado.tipo === "completa";
+---
+
+<Layout title={`Boda Gabriel & Liliana — ${invitado.nombre}`}>
+  <Portada invitado={invitado.nombre} pase={invitado.pase} />
+
+  <div id="contenido-principal">
+    <NombresFlores />
+    <Dedicatoria />
+    <Bendicion />
+    <NombresPadres />
+
+    {esCompleta ? <Fecha /> : <Fecha2 />}
+    {esCompleta ? <Contador /> : <Contador2 />}
+
+    {esCompleta && <DireccionCeremonia />}
+    <DireccionRecepcion />
+
+    {esCompleta ? <Itinerario /> : <Itinerario2 />}
+
+    <SugerenciaRegalo />
+    <CodigoVestimenta />
+    <Restriccion />
+    <Galeria />
+    <Confirmar />
+    <DespedidaDedicatoria />
+    <Des />
+  </div>
+</Layout>
