@@ -197,15 +197,7 @@
 
     if (typeof window !== "undefined") {
         document.addEventListener("DOMContentLoaded", () => {
-            // ── Leer parámetros de la URL ──────────────────────────
-            const params = new URLSearchParams(window.location.search);
-            const nombreInvitado = params.get("invitado");
-            const paseInvitado   = params.get("pase");
 
-            const elNombre = document.getElementById("portada-nombre-invitado");
-            const elPase   = document.getElementById("portada-pase-invitado");
-            if (elNombre && nombreInvitado) elNombre.textContent = nombreInvitado;
-            if (elPase   && paseInvitado)   elPase.textContent   = paseInvitado;
 
             console.log("✨ Iniciando animaciones elegantes de portada...");
 

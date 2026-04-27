@@ -21,6 +21,7 @@ import Galeria from "../components/Galeria.astro";
 import Confirmar from "../components/Confirmar.astro";
 import DespedidaDedicatoria from "../components/DespedidaDedicatoria.astro";
 import Des from "../components/Des.astro";
+import invitados from "../data/invitados.json";
 ---
 
 <Layout title="Boda Gabriel & Liliana">
@@ -73,21 +74,29 @@ import Des from "../components/Des.astro";
   </div>
 </Layout>
 
-<script>
+<script define:vars={{ invitados }}>
   document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    const tipo = params.get("tipo") || "cp";
+    const params  = new URLSearchParams(window.location.search);
+    const slug    = params.get("i");
+    const tipo    = params.get("t") || "cp";
 
+    // Buscar invitado por slug y actualizar portada
+    if (slug) {
+      const inv = invitados.find((x) => x.slug === slug);
+      if (inv) {
+        const elNombre = document.getElementById("portada-nombre-invitado");
+        const elPase   = document.getElementById("portada-pase-invitado");
+        if (elNombre) elNombre.textContent = inv.nombre;
+        if (elPase)   elPase.textContent   = inv.pase;
+      }
+    }
+
+    // Mostrar bloques según tipo
     if (tipo === "rd") {
-      const bloqueCompleta    = document.getElementById("bloque-completa");
-      const bloqueReducida    = document.getElementById("bloque-reducida");
-      const itinerarioCompleta = document.getElementById("bloque-itinerario-completa");
-      const itinerarioReducida = document.getElementById("bloque-itinerario-reducida");
-
-      if (bloqueCompleta)     bloqueCompleta.style.display    = "none";
-      if (bloqueReducida)     bloqueReducida.style.display    = "block";
-      if (itinerarioCompleta) itinerarioCompleta.style.display = "none";
-      if (itinerarioReducida) itinerarioReducida.style.display = "block";
+      document.getElementById("bloque-completa")?.style.setProperty("display", "none");
+      document.getElementById("bloque-reducida")?.style.setProperty("display", "block");
+      document.getElementById("bloque-itinerario-completa")?.style.setProperty("display", "none");
+      document.getElementById("bloque-itinerario-reducida")?.style.setProperty("display", "block");
     }
   });
 </script>
