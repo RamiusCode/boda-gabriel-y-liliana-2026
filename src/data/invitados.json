@@ -47,5 +47,6 @@
   { "slug": "juan-valencia-y-sra",         "nombre": "Juan Valencia y Sra",         "pase": "2 Pases", "tipo": "reducida" },
   { "slug": "carlos-ortiz",               "nombre": "Carlos Ortiz",               "pase": "1 Pase",  "tipo": "reducida" },
   { "slug": "lucy-mery-ortega",            "nombre": "Lucy Mery Ortega",            "pase": "1 Pase",  "tipo": "reducida" },
-  { "slug": "alex-roger-baldomar-rd",      "nombre": "Alex Roger Baldomar",         "pase": "1 Pase",  "tipo": "reducida" }
+  { "slug": "alex-roger-baldomar-rd",      "nombre": "Alex Roger Baldomar",         "pase": "1 Pase",  "tipo": "reducida" },
+  { "slug": "yobely-perez",               "nombre": "Yobely Pérez",                "pase": "1 Pase",  "tipo": "completa" }
 ]
